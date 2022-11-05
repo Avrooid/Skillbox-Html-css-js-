@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .relative {
+            position: relative;
+            background-color: black;
+            left: 50px;
+            top: 15px;
+        }
+
+        .absolute {
+            position: absolute;
+            background-color: yellow;
+            top: 50%;
+            right: 50%;
+        }
+
+        .absoluteDaughter {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            right: 50%;
+            background-color: blueviolet;
+        }
+
+        body {
+            min-height: 4000px;
+            margin: 0;
+        }
+
+        .fixed {
+            position: fixed;
+            background-color: darkred;
+            margin: 150px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block relative"></div>
+    <!-- При значении relative свойства position положение элемента устанавливается относительно его исходного места путем 
+    добавления свойств left, top, right и bottom, эти свойства никак не влияют на поток и сдвигают блок от первоначального 
+    расположения.-->
+    <div class="block"></div>
+    <!-- Значение static - это дефолтное значение для свойства position, поэтому я его не указал в классе block. 
+    При этом значении элементы отображаются как обычно. Использование свойств left, top, right и bottom не 
+    приводит к каким-либо результатам.-->
+    <div class="block absolute"></div>
+    <!-- Значение ablolute вырывает элемент из потока. При этом мы можем спозиционировать его на экране как нам угодно,
+    допустим как в примере: по центру страницы-->
+    <div class="block fixed"></div>
+    <!-- Значение fixed близко к значению absolute, но его отличие состоит в том, что при скролле страницы блок не меняет
+    своего местоположения, можем в этом убедиться: я специально сделал минимальную высоту страницы в 4000 пикселей, при
+    прокрутке страницы красный квадрат не меняет своего местоположения. Это свойство можем быть использовано для важных
+    уведомлений на сайте, например: уведомление о принятии cookie или о необходимости авторизации.-->
+    <div class="block relative">
+        <div class="absoluteDaughter"></div>
+    </div>
+    <!-- Также стоит отметить то, что если блок с свойством absolute является дочерним элементом блока с свойством
+    relative, то блок с значением absolute будем позиционироваться относительно блока с значением relative. Если
+    открыть страничку в браузере, мы можем увидеть, что фиолетовый квадрат позиционируется относительно черного квадрата,
+    но, если мы уберем в devtools в селекторе .relative галочку с position: relative;, то фиолетовый квадрат будем позиционироваться
+    уже относительно страницы. Это нагядно показывает такую важную функцию свойства position: absolute.-->
+
+    <!-- Также стоит упомянуть значение position: sticky, он редко используется и не во всех браузерах поддерживается,
+    поэтому коснемся его вскользь. Элемент с position: sticky; фиксируется в рамках ближайшего родителя, когда расстояние 
+    до границы ближайшего прокручиваемого родителя достигает указанного в свойствах top, right, bottom, left значения. 
+    На то, в каком месте элемент прикрепится и где отцепиться, также влияют свойства padding, margin и transform. -->
+
+</body>
+
+</html>

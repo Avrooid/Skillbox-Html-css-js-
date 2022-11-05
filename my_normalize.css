@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0000FF;
+}
+
+html,
+body {
+    font-size: 18px;
+    min-height: 100vh; /* vh - это процент от высоты фактического окна просмотра, то есть 100vh - 100% высоты области просмотра */
+    line-height: 1;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+button {
+    -webkit-appearance: none;
+    /* -webkit-appearance изменяет внешний вид кнопок и других 
+    элементов управления, чтобы они напоминали собственные элементы управления. Работает в Chrome и Safari 3 */
+}
