@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.text {
+    width: 297px;
+    padding: 20px 0 20px 29px;
+}
+
+.text_descr {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 170%;
+}
+
+.dot {
+    position: relative;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: 5px;
+    left: 195px;
+    cursor: pointer;
+}
+
+.popup {
+    position: absolute;
+    opacity: 0;
+    max-width: 163px;
+    background-color: #666666;
+    padding: 7px 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    transition: opacity 0.3s ease-in-out;
+    bottom: 25px;
+    right: 0;
+}
+
+.marker:hover svg path,
+.marker:focus svg path {
+    fill: #ccb26e;
+}
+
+.marker:hover + .popup,
+.marker:focus + .popup {
+    opacity: 1;
+}

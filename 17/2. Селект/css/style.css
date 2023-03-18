@@ -1,0 +1,106 @@
+/* SELECT */
+html {
+    box-sizing: border-box;
+    }
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    background-color: #424242;
+}
+
+.select {
+    width: 180px;
+}
+
+.choices {
+    overflow: visible;
+}
+
+.choices__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 9px 0 11px 15px;
+    min-height: 39px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.choices__list--single {
+    padding: 0;
+}
+
+.choices__placeholder {
+    font-size: 14px;
+    line-height: 19px;
+    opacity: 1;
+}
+
+.choices[data-type*=select-one]::after {
+    margin: 0;
+    width: 16px;
+    height: 8px;
+    right: 15px;
+    border: none;
+    background-image: url("../img/custom-select.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.choices[data-type*=select-one].is-open::after {
+    margin: 0;
+    background-image: url("../img/custom-select-open.svg");
+}
+
+.is-focused.is-open .choices__inner {
+    border: 1px solid #CCB26E;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.choices__list.choices__list--dropdown.is-active {
+    border: 1px solid #CCB26E;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+#choices--select-item-choice-5 {
+    display: none;
+}
+
+.choices__list--dropdown {
+    padding: 20px 0 20px 15px;
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+    padding: 0;
+}
+
+.choices__item--choice {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; 
+}
+
+.choices__item--choice:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: rgb(232, 192, 122);
+}
+
+/* SELECT */

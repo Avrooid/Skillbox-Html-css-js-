@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="choices.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="select">
+        <select  id="select">
+            <option> Материал</option>
+            <option >Древесина</option>
+            <option >Металл</option>
+            <option >Камень</option>
+            <option >Пластик</option>
+            <option >Композитный</option>
+            <option >Гипс</option>
+        </select>
+    </div>
+    <script src="choices.min.js"></script>
+    <script>
+        const element = document.querySelector('#select');
+        const choices = new Choices(element,{
+            allowHTML: true,
+            searchEnabled: false,
+            placeholder: true,
+            itemSelectText: '',
+        });
+    </script>
+</body>
+</html>
